@@ -7,3 +7,7 @@
   - Interface with .NET languages for actual usefulness in development applications like a networked server.
   - Capable of being compiled AOT (Ahead Of Time) for published applications.
   - Cross-platform code, write once - run anywhere - mindset.
+
+### Optional Goals:
+  - Include native data manipulation, i.e. binary, and hex arithmetic and value representation in strings and numbers in the script files. A binary number can be written as ```var a = 01111b2s;``` for signed base-2 binary and ```var b = 01111b2``` for unsigned base-2 binary.
+
