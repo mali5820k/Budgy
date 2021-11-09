@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,9 +18,14 @@ namespace KraitScript
                 {
                         file = new list<string>();
                 }
-                public void readFile(string fileName)
+                public void ReadFile(string fileName)
                 {
-                        file = System.IO.ReadAllLines(fileName);
+                        // Dropping this in favor of File methods
+                        //file = System.IO.ReadAllLines(fileName);
+                        if (!File.Exists(fileName))
+                        {
+                                file.Concat((File.ReadAllLines(fileName)).ToList<string>());
+                        }
                 }
         }
 
@@ -62,7 +68,7 @@ namespace KraitScript
                 Token previousToken { get; }
                 Scanner fileScanner;
 
-                string FileName {get; set;}
+                string FileName { get; set; }
 
                 int currTokenIndex;
                 public Lexer()
@@ -73,14 +79,12 @@ namespace KraitScript
 
                 public bool generateTokens()
                 {
-                        if (!FileName.Contains(".ks")) {
-                                Console.WriteLine("ERROR:\nFile isn't of type '.ks'");
-                                return false;
-                        }
-                        
-                        while ()
-                        {
+                        fileScanner.ReadFile(FileName);
 
+                        foreach (string line in lines)
+                        {
+                                // Divide the string without the white-spaces
+                                // Check each word scanned in to see what 
                         }
 
                         return true;

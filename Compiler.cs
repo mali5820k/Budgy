@@ -7,10 +7,15 @@ using System.Threading.Tasks;
 namespace KraitScript {
 
 	public class Compiler {
+
 		public static void Main(string[] args) {
 			Console.Writeline("New Project Compiler");
+                        if(args.Length < 2) {
+                                Console.WriteLine("Usage: ./KSCompiler sourceFile.ks");
+                                //Application.Exit(); // This apparently doesn't work on linux
+                        }
 		}
-
+ 
 		public bool generateIL() {
 			// Placeholder
 		}
