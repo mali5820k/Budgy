@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KraitScript {
 
-	struct keyWords {
+	enum keyWords {
 		VAR,
 		FOR,
 		WHILE,
@@ -28,7 +28,7 @@ namespace KraitScript {
 		MAIN
 	}
 
-	struct operators {
+	enum operators {
 		PLUS,
 		PLUS_EQUAL,
 		POST_PLUS_PLUS,
@@ -68,9 +68,11 @@ namespace KraitScript {
 
 
 	public class Lexer {
-		public static void Main(string[] args) {
-			Console.Writeline("C#");
-		}
+		
+                public Lexer()
+                {
+
+                }
 	}
 	
 }
