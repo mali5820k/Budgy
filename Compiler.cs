@@ -13,6 +13,7 @@ namespace KraitScript {
                         if(args.Length < 2) {
                                 Console.WriteLine("Usage: ./KSCompiler sourceFile.ks");
                                 //Application.Exit(); // This apparently doesn't work on linux
+                                Environment.Exit(-1);
                         }
 		}
  

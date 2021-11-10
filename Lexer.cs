@@ -92,7 +92,6 @@ namespace KraitScript
 
                 public consumeToken()
                 {
-
                         currentToken = readTokens[currTokenIndex++];
                 }
         }
