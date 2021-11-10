@@ -19,6 +19,7 @@ namespace KraitScript {
  
 		public bool generateIL() {
 			// Placeholder
+                        return true;
 		}
 	}
 	

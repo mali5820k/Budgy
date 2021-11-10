@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "QxvPU9yP3tte0a9V2Cpm4B+NjZyVDHPJlIjsyqivSGXgnsXTjk9pDaNplEHqAspV9PFH7XFKh0jk2h10OXApIg==",
+  "success": true,
+  "projectFilePath": "/home/muhammad/Desktop/Github_Projects/Krait-Script/Krait-Script.csproj",
+  "expectedPackageFiles": [
+    "/home/muhammad/.nuget/packages/microsoft.aspnetcore.app.ref/5.0.0/microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

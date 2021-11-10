@@ -1,0 +1,5 @@
+/home/muhammad/Desktop/Github_Projects/Krait-Script/obj/Debug/net5.0/Krait-Script.csprojAssemblyReference.cache
+/home/muhammad/Desktop/Github_Projects/Krait-Script/obj/Debug/net5.0/Krait-Script.GeneratedMSBuildEditorConfig.editorconfig
+/home/muhammad/Desktop/Github_Projects/Krait-Script/obj/Debug/net5.0/Krait-Script.AssemblyInfoInputs.cache
+/home/muhammad/Desktop/Github_Projects/Krait-Script/obj/Debug/net5.0/Krait-Script.AssemblyInfo.cs
+/home/muhammad/Desktop/Github_Projects/Krait-Script/obj/Debug/net5.0/Krait-Script.csproj.CoreCompileInputs.cache

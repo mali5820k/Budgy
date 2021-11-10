@@ -9,12 +9,12 @@ namespace KraitScript
 {
 
         // Scan the text in from the source file
-        public class Scanner
+        public class CodeScanner
         {
                 int numLines;
                 List<string> file;
                 int line;
-                public static Scanner()
+                public CodeScanner()
                 {
                         file = new list<string>();
                 }
@@ -53,20 +53,11 @@ namespace KraitScript
                         BITWISE_ONES_COMPLEMENT, BITWISE_TWOS_COMPLEMENT
                 }
 
-                public class Token
-                {
-                        TokenType tokenType;
-                        public Token(TokenType assign)
-                        {
-                                tokenType = assign;
-                        }
 
-                }
-
-                List<keyWords> readTokens;
+                List<Token> readTokens;
                 Token currentToken { get; }
                 Token previousToken { get; }
-                Scanner fileScanner;
+                CodeScanner fileScanner;
 
                 string FileName { get; set; }
 
@@ -74,7 +65,7 @@ namespace KraitScript
                 public Lexer()
                 {
                         readTokens = new List<keyWords>();
-                        fileScanner = new Scanner();
+                        fileScanner = new CodeScanner();
                 }
 
                 public bool generateTokens()
@@ -90,7 +81,7 @@ namespace KraitScript
                         return true;
                 }
 
-                public consumeToken()
+                public void consumeToken()
                 {
                         currentToken = readTokens[currTokenIndex++];
                 }
