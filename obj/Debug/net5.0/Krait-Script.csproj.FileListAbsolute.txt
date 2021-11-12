@@ -3,3 +3,14 @@
 /home/muhammad/Desktop/Github_Projects/Krait-Script/obj/Debug/net5.0/Krait-Script.AssemblyInfoInputs.cache
 /home/muhammad/Desktop/Github_Projects/Krait-Script/obj/Debug/net5.0/Krait-Script.AssemblyInfo.cs
 /home/muhammad/Desktop/Github_Projects/Krait-Script/obj/Debug/net5.0/Krait-Script.csproj.CoreCompileInputs.cache
+/home/muhammad/Desktop/Github_Projects/Krait-Script/bin/Debug/net5.0/Krait-Script
+/home/muhammad/Desktop/Github_Projects/Krait-Script/bin/Debug/net5.0/Krait-Script.deps.json
+/home/muhammad/Desktop/Github_Projects/Krait-Script/bin/Debug/net5.0/Krait-Script.runtimeconfig.json
+/home/muhammad/Desktop/Github_Projects/Krait-Script/bin/Debug/net5.0/Krait-Script.runtimeconfig.dev.json
+/home/muhammad/Desktop/Github_Projects/Krait-Script/bin/Debug/net5.0/Krait-Script.dll
+/home/muhammad/Desktop/Github_Projects/Krait-Script/bin/Debug/net5.0/ref/Krait-Script.dll
+/home/muhammad/Desktop/Github_Projects/Krait-Script/bin/Debug/net5.0/Krait-Script.pdb
+/home/muhammad/Desktop/Github_Projects/Krait-Script/obj/Debug/net5.0/Krait-Script.dll
+/home/muhammad/Desktop/Github_Projects/Krait-Script/obj/Debug/net5.0/ref/Krait-Script.dll
+/home/muhammad/Desktop/Github_Projects/Krait-Script/obj/Debug/net5.0/Krait-Script.pdb
+/home/muhammad/Desktop/Github_Projects/Krait-Script/obj/Debug/net5.0/Krait-Script.genruntimeconfig.cache
