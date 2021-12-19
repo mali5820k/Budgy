@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Krait-Script_C#_Compiler/1.0.0": {
+        "runtime": {
+          "Krait-Script_C#_Compiler.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Krait-Script_C#_Compiler/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
