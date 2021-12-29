@@ -1,4 +1,15 @@
-1 + 2
+print 1 + 2
+print 1 + 2;
 
-2 + 10;
+print 2 + 10
+print 2 + 10;
 
+print -1 * 2
+print 4 - 23
+
+print 1 * -12
+print 1 + -12
+print -23 - -234
+
+print -24 / 24
+print 24 / -24
