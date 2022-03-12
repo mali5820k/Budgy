@@ -1,0 +1,11 @@
+print "Hello";
+print ("Hello");
+
+var x = 200.00093;
+var y = 299480.392
+print x * y
+
+print x.power(2) + y.power(5);
+
+print f'This is the value of x {x} and this is the value of y {y}";
+
