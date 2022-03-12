@@ -5,8 +5,11 @@
 ## Project Motivation:
   - The motivation for this project is the urge of having a low-level language that doesn't require too much time to pick up and start developing. This may not end up replacing any language, but it may become a usable tool that's versatile in its own right.
 
+### Possible Choices for Implementation:
+  - C++ using LLVM's provided API.
+  - C++20 (modern C++), where the language's syntax is translated to C++, then compiled to LLVM IR through Clang (LLVM's frontend for C and C++).
+  - Rust as it already uses LLVM. Through translating the language's syntax to Rust under-the-hood and then outputting LLVM IR, I can incorporate many of the features the Rust         language has to offer regarding memory safety, dangling pointers, and etc, without having to reconstruct those constructs from scratch in LLVM IR.
+  - Go programming language with a library to interface more intuitively with the LLVM API. The Go library that makes a nice API to interface with LLVM IR is [here](https://github.com/llir/llvm). This will be the backbone in the Go implementation if I use this approach.
+
 ### Current Plan
-  - I originally planned to use C# for my compiler to compile arc to IL for use as a CLR language, however, I am now swayed by LLVM and will implement the compiler for my language with LLVM as the backend. Compiling down to LLVM IR will allow me to focus on the frontend of the compiler as opposed to the optimizations and highly complex compiler operations, such as loop unrolling and function inlining. Due to this Ahead of Time (AOT) compiler approach, performance will be equal to or comparable to that of the C language. The LLVM backend will perform the heavy lifting to allow the language to hit the performance target.
-  - 
-### Language Choice for Implementation:
-  - The project could go two ways, one with C++ and native LLVM API calls, or the use of the Go programming language with a library to interface more intuitively with the LLVM API. I have no real problem with going with either option, however, for the sake of my own limited time, I will be using Go until it proves to be a hinderance for implementing features. The Go library that makes a nice API to interface with LLVM IR is [here](https://github.com/llir/llvm). This will be the backbone in the Go implementation.
+  - Likely the Rust implementation. If that doesn't work out, then C++20, otherwise the Go library approach. If these options aren't achievable in a reasonable amount of time, I may simply port the language to Java's JVM and polish the language there.
