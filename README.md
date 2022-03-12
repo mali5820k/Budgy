@@ -12,4 +12,4 @@
   - Go programming language with a library to interface more intuitively with the LLVM API. The Go library that makes a nice API to interface with LLVM IR is [here](https://github.com/llir/llvm). This will be the backbone in the Go implementation if I use this approach.
 
 ### Current Plan
-  - Likely the Rust implementation. If that doesn't work out, then C++20, otherwise the Go library approach. If these options aren't achievable in a reasonable amount of time, I may simply port the language to Java's JVM and polish the language there.
+  - I will pick whichever implementation will take the least amount of time. Ideally, I want to go with the Rust implementation. If that doesn't work out, then C++20, otherwise the Go library approach. If the previous options aren't achievable in a reasonable amount of time, I may simply port the language to Java's JVM and polish the language there.
