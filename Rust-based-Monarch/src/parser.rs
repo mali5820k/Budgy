@@ -5,5 +5,5 @@ struct ASTNode {
 }
 
 struct Parser {
-
+    
 }
