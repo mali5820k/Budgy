@@ -14,7 +14,7 @@ struct Parser {
 // Methods in rust use an implementation block
 impl Parser {
 
-    fn parse_whiteSpace() -> Parser {
-        // Need to review more Rust basics
+    fn parse_whiteSpace(&self) -> Parser {
+        if (self.currentNode)
     }
 }

@@ -14,7 +14,7 @@ enum TokenType {
     Eq, GrEq, LsEq, EqEq, Gr, Ls, NEq,
 
     /* Logical operators */
-    And, Or, Not, Bang, BitAnd, BitOr, BitXor
+    And, Or, Not, Bang, BitAnd, BitOr, BitXor,
 
     /* Expression operators */
     MultEq, DivEq, AddEq, SubEq,
@@ -29,7 +29,7 @@ enum TokenType {
 
     /* Variable types */
     Int, Float, Double, Str, Chr,
-    Int8, Int16, Int32, Int64, Int128
+    Int8, Int16, Int32, Int64, Int128,
 
     /* Data Structures */
     FixedList, List, HashMap, 
