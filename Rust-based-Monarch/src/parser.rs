@@ -20,7 +20,7 @@ struct Parser {
 // Methods in rust use an implementation block
 impl Parser {
 
-    fn parse_whiteSpace(&self) {
+    fn parse_white_space(&self) {
         
     }
 }

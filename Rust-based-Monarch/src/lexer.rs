@@ -40,7 +40,6 @@ pub enum Token {
     FixedList, List, HashMap, 
 }
 
-    int16: i16,
 // Stores one contiguous string of tokens on the same line : ie: var x = 10;
 // or multiline: while (1) {
 //                  var x = 10;   
