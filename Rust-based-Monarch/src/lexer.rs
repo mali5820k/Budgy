@@ -1,5 +1,10 @@
 // Lexer
-enum TokenType {
+enum DataType {
+    Int, Int8, Int16, Int32, Int64, Int128,
+    Float, Double, Str, Chr, Obj,
+}
+
+pub enum Token {
     // NOTE, the order of these tokentypes aren't an accurate 
     // indication of their precedence. That will be handled by the parser.
 
@@ -35,25 +40,31 @@ enum TokenType {
     FixedList, List, HashMap, 
 }
 
-union TokenValue {
-    int8: i8,
     int16: i16,
-    int32: i32,
-    int64: i64,
-    int128: i128,
-    float32: f32,
-    float64: f64,
-    character: Chr,
-    string: Str,
+// Stores one contiguous string of tokens on the same line : ie: var x = 10;
+// or multiline: while (1) {
+//                  var x = 10;   
+//               }
+// However, each Token
+struct TokenObj {
+    start_line_number: i64,
+    end_line_number: i64,
+    tokens: Vec<Token>
 }
 
-struct Token {
-    tokenType: TokenType,
-    tokenValue: TokenValue
+// In order to utilize this struct in the parser.rs file
+pub struct Lexer {
+    pub currentLine: i64, //  Could get away with just an i32
+    pub currentToken: Token,
+    pub nextToken: Token,
 }
+impl Lexer {
+    pub fn set_current_line(&mut self, i:i64) -> bool {
+        self.currentLine = i;
+        return true;
+    }
 
-struct Lexer {
-    currentLine: i64, //  Could get away with just an i32
-    currentToken: Token,
-    nextToken: Token,
+    pub fn get_current_line(&self) -> i64 {
+        return self.currentLine;
+    }
 }

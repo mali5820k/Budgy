@@ -1,11 +1,17 @@
+use crate::lexer;
 
 struct ASTNode {
-    nodeLeft: ASTNode,
-    nodeRight: ASTNode,
+    contents: String
+}
+
+struct ASTJunction {
+    nodeLeft: Box<ASTJunction>,
+    currentNode: ASTNode,
+    nodeRight: Box<ASTJunction>,
 }
 
 struct Parser {
-    lexer: Lexer,
+    lexer_: lexer::Lexer,
     currentNode: ASTNode,
     prevNode: ASTNode,
     error: bool,
@@ -14,7 +20,7 @@ struct Parser {
 // Methods in rust use an implementation block
 impl Parser {
 
-    fn parse_whiteSpace(&self) -> Parser {
-        if (self.currentNode)
+    fn parse_whiteSpace(&self) {
+        
     }
 }
