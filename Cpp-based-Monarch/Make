@@ -1,0 +1,5 @@
+all: main.cpp lexer.cpp parser.cpp
+    clang++ -std=c++17 main.cpp lexer.cpp parser.cpp -o -O3 monarch_compiler
+
+debug:
+    clang++ -g -std=c++17 sample.cpp -o debug_monarch_compiler
