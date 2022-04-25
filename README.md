@@ -7,9 +7,9 @@
 
 ### Possible Choices for Implementation:
   - C++ using LLVM's provided API.
-  - C++20 (modern C++), where the language's syntax is translated to C++, then compiled to LLVM IR through Clang (LLVM's frontend for C and C++).
+  - C++17-20 (modern C++), where the language's syntax is translated to C++, then compiled to LLVM IR through Clang (LLVM's frontend for C and C++).
   - Rust as it already uses LLVM. Through translating the language's syntax to Rust under-the-hood and then outputting LLVM IR, I can incorporate many of the features the Rust         language has to offer regarding memory safety, dangling pointers, and etc, without having to reconstruct those constructs from scratch in LLVM IR.
   - Go programming language with a library to interface more intuitively with the LLVM API. The Go library that makes a nice API to interface with LLVM IR is [here](https://github.com/llir/llvm). This will be the backbone in the Go implementation if I use this approach.
 
 ### Current Plan
-  - I will pick whichever implementation will take the least amount of time. Ideally, I want to go with the Rust implementation. If that doesn't work out, then C++20, otherwise the Go library approach. If the previous options aren't achievable in a reasonable amount of time, I may simply port the language to Java's JVM and polish the language there.
+  - I will pick whichever implementation will take the least amount of time. Ideally, I want to go with the Rust implementation. If that doesn't work out, then C++17-20, otherwise the Go library approach. If the previous options aren't achievable in a reasonable amount of time, I may simply port the language to Java's JVM and polish the language there.
