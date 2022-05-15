@@ -1,69 +1,76 @@
+use std::fmt;
+
 // Lexer
-enum DataType {
-    Int, Int8, Int16, Int32, Int64, Int128,
-    Float, Double, Str, Chr, Obj,
+union Value {
+    val_u8: u8,
+    val_u16: u16,
+    val_u32: u32,
+    val_u64: u64,
+    val_u128: u128,
+    
+    val_i8: i8,
+    val_i16: i16,
+    val_i32: i32,
+    val_i64: i64,
+    val_i128: i128,
+
+    val_f32: f32,
+    val_f64: f64,
 }
 
+// Each Token entry has a "Token Type" which each holds the associated data type and the line
+// number that token appears on.
 pub enum Token {
-    // NOTE, the order of these tokentypes aren't an accurate 
-    // indication of their precedence. That will be handled by the parser.
-
-    /* Scope and precedence: */
-    LBrack, RBrack, LParen, RParen,
-
-    /* Other Special characters */
-    BackSlash, Tilde, Dot, 
-    Colon, SemiColon,
-
-    /* Comparison operators */
-    Eq, GrEq, LsEq, EqEq, Gr, Ls, NEq,
-
-    /* Logical operators */
-    And, Or, Not, Bang, BitAnd, BitOr, BitXor,
-
-    /* Expression operators */
-    MultEq, DivEq, AddEq, SubEq,
-    Mult, Div, Add, Sub,
-    AddPost, SubPost, Exp, // Exp is ^^ which raises the base to that power, for example: 
-
-    /* Keywords */
-    For, While, Continue, Break,
-    If, Else,
-    Switch, Case, Default,
-    Class, Struct, Var,
-
-    /* Variable types */
-    Int, Float, Double, Str, Chr,
-    Int8, Int16, Int32, Int64, Int128,
-
-    /* Data Structures */
-    FixedList, List, HashMap, 
+    Keyword(String, i128),
+    Numeric(Value, i128),
+    Operator(char, i128),
+    Symbol(String, i128)
 }
 
-// Stores one contiguous string of tokens on the same line : ie: var x = 10;
-// or multiline: while (1) {
-//                  var x = 10;   
-//               }
-// However, each Token
-struct TokenObj {
-    start_line_number: i64,
-    end_line_number: i64,
-    tokens: Vec<Token>
+impl Token {
+    pub fn get_value (&self) -> String{
+        let mut my_string = String::from("{} {}", );
+    }
 }
 
-// In order to utilize this struct in the parser.rs file
+impl fmt::Display for Token {
+    pub fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result{
+        write!(f, "({})", self::get_value);
+    }
+}
+
+pub struct Scanner {
+    current_line: i128,
+    line_buffer: String,
+}
+
 pub struct Lexer {
-    pub currentLine: i64, //  Could get away with just an i32
-    pub currentToken: Token,
-    pub nextToken: Token,
+    tokens_list: Vec<Token>,
+    current_token: Token,
+
+
 }
+
 impl Lexer {
-    pub fn set_current_line(&mut self, i:i64) -> bool {
-        self.currentLine = i;
+    pub fn new (&mut self) -> Self {
+        let instance = Lexer {
+
+        };
+
+        instance
+    }
+
+    pub fn set_current_line (&mut self, i:i64) -> bool {
         return true;
     }
 
-    pub fn get_current_line(&self) -> i64 {
-        return self.currentLine;
+    pub fn get_current_line (&self) -> i64 {
+        return 1;
+    }
+}
+
+impl fmt::Display for Lexer {
+    pub fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result{
+        write!(f, "({})", self.current_token);
     }
 }
