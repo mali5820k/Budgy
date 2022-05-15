@@ -1,5 +1,3 @@
-use std::fmt;
-
 // Lexer
 union Value {
     val_u8: u8,
@@ -30,12 +28,7 @@ pub enum Token {
 impl Token {
     pub fn get_value (&self) -> String{
         let mut my_string = String::from("{} {}", );
-    }
-}
-
-impl fmt::Display for Token {
-    pub fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result{
-        write!(f, "({})", self::get_value);
+        return my_string;
     }
 }
 
@@ -47,17 +40,16 @@ pub struct Scanner {
 pub struct Lexer {
     tokens_list: Vec<Token>,
     current_token: Token,
-
-
 }
 
 impl Lexer {
-    pub fn new (&mut self) -> Self {
-        let instance = Lexer {
-
+    pub fn new () -> Self {
+        let mut instance = Lexer {
+            tokens_list: Vec::new(),
+            current_token: Token::Keyword(String::from("if"), 1),
         };
 
-        instance
+        return instance;
     }
 
     pub fn set_current_line (&mut self, i:i64) -> bool {
@@ -69,8 +61,9 @@ impl Lexer {
     }
 }
 
-impl fmt::Display for Lexer {
-    pub fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result{
-        write!(f, "({})", self.current_token);
+impl ToString for Lexer {
+    fn to_string(&self) -> String {
+        let mut my_string = String::from("Hello There");
+        return my_string;
     }
 }
