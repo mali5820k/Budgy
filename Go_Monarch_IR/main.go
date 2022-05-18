@@ -2,13 +2,14 @@ package main
 
 import (
 	"fmt"
-	"./lexer"
-	"./parser"
+	."local_imports/monarch"
 )
 
 func main() {
 	fmt.Println("Hello World");
-	var x = parse();
+	//var x = monarch.Parse();
+	var x = Parse();
 	fmt.Println(x);
-	fmt.Println(lexer());
+	fmt.Println(Lexer());
+	//fmt.Println(monarch.Lexer());
 }
