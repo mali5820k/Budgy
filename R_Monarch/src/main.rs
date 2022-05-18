@@ -1,14 +1,16 @@
 mod lexer;
 mod parser;
 
+use lexer::*;
+use parser::*;
+
 fn main() {
-    // Run Parser
+   // Run Parser
     // Generate byte-code
     // compile byte-code to rust expressions
     // output rust code as seperate file
-    let mut myLexer : lexer::Lexer = { lexer::Lexer {currentLine: 0, currentToken: lexer::Token::Add, nextToken: lexer::Token::Add }};
-    //myLexer.currentLine = 24;
+    let mut myLexer = Lexer{ current_line: 0, current_token: TokenType::Operator("+".to_string()), next_token: TokenType::Numeric("1".to_string())};
     myLexer.set_current_line(820);
     let x = myLexer.get_current_line();
-    print!("\nThe current line that was assigned to the lexer is: \n{}\n", x);
+    print!("{}", myLexer);
 }

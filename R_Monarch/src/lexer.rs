@@ -1,10 +1,12 @@
+use std::fmt;
+
 // Lexer
 enum DataType {
     Int, Int8, Int16, Int32, Int64, Int128,
     Float, Double, Str, Chr, Obj,
 }
 
-pub enum Token {
+pub enum TokenDeprecated {
     // NOTE, the order of these tokentypes aren't an accurate 
     // indication of their precedence. That will be handled by the parser.
 
@@ -40,30 +42,69 @@ pub enum Token {
     FixedList, List, HashMap, 
 }
 
-// Stores one contiguous string of tokens on the same line : ie: var x = 10;
-// or multiline: while (1) {
-//                  var x = 10;   
-//               }
-// However, each Token
-struct TokenObj {
-    start_line_number: i64,
-    end_line_number: i64,
-    tokens: Vec<Token>
+/*
+ * Token Enum (Behaves like a union).
+ *
+ * Variable stores the name of the variable in context.
+ * Function stores the name of the function whether in declaration or a function call.
+ * Keyword is the keyword reserved for the language encountered in the particular line,
+ *      such as if, else, while, for, continue, break, return, null, var, class,
+ *      constructor, and etc..
+ * Numeric is a numberic value encountered, such as int, float, double, or byte.
+ * Operator stores the operation taking place, such as assignment '=', multiplication
+ * '*', addition, subtraction, division, exponentiation '^^', and more.
+ */
+
+pub enum TokenType {
+    Var(String),
+    Func(String),
+    Keyword(String),
+    Numeric(String),
+    Operator(String),
 }
 
-// In order to utilize this struct in the parser.rs file
-pub struct Lexer {
-    pub currentLine: i64, //  Could get away with just an i32
-    pub currentToken: Token,
-    pub nextToken: Token,
+impl fmt::Display for TokenType {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        match self {
+            TokenType::Var(value) => write!(f, "TokenType: Var\n\tTokenString: {}", value),
+            TokenType::Func(value) => write!(f, "TokenType: Func\n\tTokenString: {}", value),
+            TokenType::Keyword(value) => write!(f, "TokenType: Keyword\n\tTokenString: {}", value),
+            TokenType::Numeric(value) => write!(f, "TokenType: Numeric\n\tTokenString: {}", value),
+            TokenType::Operator(value) => write!(f, "TokenType: Operator\n\tTokenString: {}", value),
+        }
+    }
 }
+
+struct TokenObj {
+    token_type: TokenType,
+    line_number: i64,
+}
+
+impl fmt::Display for TokenObj {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "Token Type: {}\nOn Line: {}", self.token_type, self.line_number) 
+    }
+}
+
+pub struct Lexer {
+    pub current_token: TokenType,
+    pub next_token: TokenType,
+    pub current_line: i64,
+}
+
 impl Lexer {
     pub fn set_current_line(&mut self, i:i64) -> bool {
-        self.currentLine = i;
+        self.current_line = i;
         return true;
     }
 
     pub fn get_current_line(&self) -> i64 {
-        return self.currentLine;
+        return self.current_line;
+    }
+}
+
+impl fmt::Display for Lexer {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "Lexer:\nCurrent Token: {}\nNext Token: {}\nCurrent Line: {}", self.current_token, self.next_token, self.current_line)
     }
 }
