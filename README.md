@@ -19,7 +19,7 @@
   - Compiling down to another language and bootstrapping my own compiler. I really don't want to do this as I will have to handle optimizations on my own after the compiler is bootstrapped.
   - Java. Targetting the JVM by writing the compiler in Java, or another supporting JVM language, to output Java bytecode. This'll give me the bootstrapped compiler that I want and still have the performance of the JVM and the libraries and features of Java.
 
-### Plans and experiences:
+### Thoughts on possible implementations:
   - My experience with the Rust Programming language has been restricting and horrible due to my inexperience with it. From that alone, I don't feel motivated to continue using Rust for the compiler. 
   - Compiling down to C++ is one approach. This simply leverages the C++ compiler of choice and can result in utilizing existing tools to bootstrap the language for any targetted architecture, provided the original compiler is compiled from source.
   - Go is now the primary candidate for the LLVM IR approach, due to it's simplistic syntax that is comparable to that of C, however, due to the garbage collection penalty, I will likely generate LLVM IR using the library mentioned previously link the outputted IR with a runtime library of libstdc++ due to the GCC GNU licensing and website stating that there are no restrictions for linking or using this library, therefore the resulting binary won't be affected by the GPL or LGPL licenses.
