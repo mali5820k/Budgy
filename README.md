@@ -1,4 +1,4 @@
-# King Cobra++ (as C++ was to C, King Cobra++ is to King Cobra)
+# King Cobra++ (as C++ was to C, King Cobra++ is to [King Cobra](https://github.com/mali5820k/KC-Programming-Language))
   - A personal project that stems from an interest of creating compilers and programming languages.
 ## Project Goals:
   - Construct a type-based language that is AOT compiled like C and C++ which can emulate high-level language constructs that are present in scripting languages. 
