@@ -1,5 +1,3 @@
-package Java_Monarch;
-
 /**
  * The Compiler class implementation.
  * The Compiler's job is to take use the Parser class

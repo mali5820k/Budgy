@@ -1,1 +1,0 @@
-/home/mali/Desktop/Github\ Projects/Monarch-Programming-Language/R_Monarch/target/debug/Rust-based-Monarch: /home/mali/Desktop/Github\ Projects/Monarch-Programming-Language/R_Monarch/src/lexer.rs /home/mali/Desktop/Github\ Projects/Monarch-Programming-Language/R_Monarch/src/main.rs /home/mali/Desktop/Github\ Projects/Monarch-Programming-Language/R_Monarch/src/parser.rs

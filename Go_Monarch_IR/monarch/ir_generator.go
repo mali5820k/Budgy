@@ -1,3 +1,0 @@
-package monarch
-
-// Sample file
