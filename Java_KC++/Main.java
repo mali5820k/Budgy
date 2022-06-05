@@ -25,7 +25,7 @@ public class Main {
         switch (args.length) {
             case 1:
                 // Check if the file is of .king suffix. 
-                if (!args[0].endsWith(".kcpp")) {
+                if (!args[0].endsWith(".kc++")) {
                     System.out.println("The file supplied does not have a '.kcpp' suffix.\nEnding compilation\n\n");
                     System.exit(-1);
                 }

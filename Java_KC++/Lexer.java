@@ -4,6 +4,7 @@
  * identifiable tokens.
  */
 public class Lexer {
+
     public Lexer() {
         
     }
