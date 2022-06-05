@@ -21,9 +21,20 @@ public class Main {
      */
     public static void main(String args[]) {
         // Check for valid input source (terminal/console or file with proper extension)
-        if (args.length != 1) {
-            System.out.println("No arguments were provided");
+        // NOTE: Only one file is to be provided as an argument for the monarch compiler to compile it and the dependencies.
+        switch (args.length) {
+            case 1:
+                // Check if the file is of .king suffix. 
+                if (!args[0].endsWith(".kcpp")) {
+                    System.out.println("The file supplied does not have a '.kcpp' suffix.\nEnding compilation\n\n");
+                    System.exit(-1);
+                }
+                break;
+            default:
+                System.out.println("No or more than one argument(s) were provided\nEntering in Interpreter Mode (Coming soon...)\n\n");
+                System.exit(-1);
         }
+
         // Lex the file into readable tokens
         Lexer lexer = new Lexer();
         // Parser will generate an AST from the assembled list of tokens
