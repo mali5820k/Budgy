@@ -1,11 +1,11 @@
 import os
 
 def main():
-    os.system("powershell.exe rm monarch.jar")
-    os.chdir("Java_Monarch")
+    os.system("powershell.exe rm KC++.jar")
+    os.chdir("Java_KC++")
     os.system("javac *.java")
-    os.system("jar cfe monarch.jar Main *.class")
-    os.system("powershell.exe mv monarch.jar ../")
+    os.system("jar cfe KC++.jar Main *.class")
+    os.system("powershell.exe mv KC++.jar ../")
     os.system("powershell.exe rm *.class")
 
 

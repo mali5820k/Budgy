@@ -1,7 +1,4 @@
-import java.util.*;
-
-public class Token <T> {
-    public enum TokenType{
+public static enum TokenType {
         IF, ELSE, THIS, FOR, WHILE,
         VAR, FUNCTION, CLASS, STRUCT, ENUM,
         LIST, DICT,
@@ -14,19 +11,4 @@ public class Token <T> {
         LEFT_PAREN, RIGHT_PAREN, LEFT_CURLY_BRACE, RIGHT_CURLY_BRACE, LEFT_SQUARE_BRACKET, RIGHT_SQUARE_BRACKET,
         SEMI_COLON, COLON, SINGLE_QUOTE, DOUBLE_QUOTE, 
         OPERATOR; 
-    }
-
-    public Long srcLineNumber;
-    public TokenType type;
-    public TokenValue<T> value;
-
-    public Token (TokenType import1, TokenValue<T> value, Long srcLineNumber) {
-        this.type = import1;
-        this.value = value;
-        this.srcLineNumber = srcLineNumber;
-    }
-
-    public String toString() {
-        return String.format("Token:\n\tToken type: %s\n\tToken value: %s", type.toString(), value.toString());
-    }
 }

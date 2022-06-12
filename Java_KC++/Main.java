@@ -29,9 +29,23 @@ public class Main {
                     System.out.println("The file supplied does not have a '.kcpp' suffix.\nEnding compilation\n\n");
                     System.exit(-1);
                 }
+                else {
+                    try {
+                        File source_file = new File(args[0]);
+                        if (!source_file.exists()) {
+                            System.out.println("The source file provided cannot be found on specific path. Please check the absolute path and try again.\n");
+                            System.exit(-1);
+                        }
+                    }
+                    catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    
+
+                }
                 break;
             default:
-                System.out.println("No or more than one argument(s) were provided\nEntering in Interpreter Mode (Coming soon...)\n\n");
+                System.out.println("Zero or more than one argument(s) were provided\nEntering in Interpreter Mode (Coming soon...)\n\n");
                 System.exit(-1);
         }
 
