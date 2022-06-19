@@ -1,11 +1,12 @@
 import os
 
 def main():
+    executable_name = "Pudgy"
     os.system("powershell.exe rm KC++.jar")
-    os.chdir("Java_KC++")
+    os.chdir(f"Java_{executable_name}")
     os.system("javac *.java")
-    os.system("jar cfe KC++.jar Main *.class")
-    os.system("powershell.exe mv KC++.jar ../")
+    os.system(f"jar cfe {executable_name}.jar Main *.class")
+    os.system(f"powershell.exe mv {executable_name}.jar ../")
     os.system("powershell.exe rm *.class")
 
 
