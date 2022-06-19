@@ -1,4 +1,4 @@
-public static enum TokenType {
+public enum TokenType {
         IF, ELSE, THIS, FOR, WHILE,
         VAR, FUNCTION, CLASS, STRUCT, ENUM,
         LIST, DICT,
@@ -10,5 +10,5 @@ public static enum TokenType {
         EOF, NEWLINE, 
         LEFT_PAREN, RIGHT_PAREN, LEFT_CURLY_BRACE, RIGHT_CURLY_BRACE, LEFT_SQUARE_BRACKET, RIGHT_SQUARE_BRACKET,
         SEMI_COLON, COLON, SINGLE_QUOTE, DOUBLE_QUOTE, 
-        OPERATOR
+        OPERATOR, NOT_NUMERIC, IDENTIFIER, CONSTANT, WHITESPACE,
 }

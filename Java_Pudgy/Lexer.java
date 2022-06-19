@@ -10,22 +10,22 @@ public class Lexer {
     // File reading variables:
     File srcFile; // Source file path
     int currentLineNumber; // Current line number in file
-    ArrayList<Char> lineBuffer; // Characters within the current line
+    ArrayList<Character> lineBuffer; // Characters within the current line
     ArrayList<Token> tokens; // Collection of tokens generated from this file
-    ArrayList<Char> accumulatedCharacters; // The characters accumulated for the current word
+    ArrayList<Character> accumulatedCharacters; // The characters accumulated for the current word
 
     public Lexer() {
         if (srcFile == null) {
             srcFile = null;
         }
-        currentLineNumber = 0;
+        currentLineNumber = 1;
         lineBuffer = new ArrayList<>();
         tokens = new ArrayList<>();
         tokens = new ArrayList<>();
     }
 
     public Lexer(File srcFile) {
-        Lexer();
+        this();
         setSrcFile(srcFile);
     }
 
@@ -55,13 +55,76 @@ public class Lexer {
     public void readLines() throws FileNotFoundException {
         Scanner fileScanner = new Scanner(srcFile); // Reads the srcFile line-by-line.
         while (fileScanner.hasNextLine()) {
-            currentLine = fileScanner.nextLine(); // Get the next line from the src file.
+            String currentLine = fileScanner.nextLine(); // Get the next line from the src file.
             // FOR DEBUG VIEW ONLY:
             System.out.println("Line that was read from the Lexer:\n " + currentLine + "\n\n");
             Tokenize(currentLine);
+            currentLineNumber++;
         }
         fileScanner.close();
-        
+    }
+
+    public boolean matchPattern(int index, String remainingExpression) {
+        for (int i = index+1; i < remainingExpression.length(); i++) {
+            if (lineBuffer.get(i) != remainingExpression.charAt(i)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public void Tokenize(String currentLine) {
+        for(char character : currentLine.toCharArray()) { // Add all characters of the current line into the lineBuffer
+            lineBuffer.add(character);
+        }
+
+        for (int i = 0; i < lineBuffer.size(); i++) {
+            char character = lineBuffer.get(i);
+            Token newToken = null;
+            switch (character) {
+                case 'c':
+                    if (matchPattern(i, "lass")) {
+                        // TODO
+                    }
+                    else if (matchPattern(i, "har")) {
+                        // TODO
+                    }
+                    else if (matchPattern(i, "ontinue")) {
+                        // TODO
+                    }
+                    break;
+                case 'd':
+                    break;
+                case 'e':
+                    break;
+                case 'f':
+                    break;
+                case 'i':
+                    break;
+                case 'v':
+                    break;
+                case 'w':
+                    break;
+                case ' ':
+                    newToken = new Token(TokenType.WHITESPACE, " ", currentLineNumber);
+                    break;
+                case '\n':
+                    newToken = new Token(TokenType.NEWLINE, "\n", currentLineNumber);
+                    break;
+                default: // This is a value, variable, or object name:
+                    String value = "";
+                    // TODO: Get the remainder of the string of characters up to the first white-space and find out the type of the token.
+                    TokenType type = isNumeric(""+character); // Need to get the whole "string" of this string input up to the whitespace.
+                    if (type == TokenType.NOT_NUMERIC) {
+                        type = TokenType.CONSTANT;
+                    }
+                    newToken = new Token(type, value, currentLineNumber); // Create the new token
+                    tokens.add(newToken); // Append this new token to the list of tokes we have.
+                    break;
+                
+            }
+            accumulatedCharacters.clear(); // Clear the 
+        }
     }
 
     public TokenType isNumeric(String word) {
@@ -92,11 +155,11 @@ public class Lexer {
                     // This datatype is too large!
                     System.out.println("Data value is larger than 64-bits! DUMP!");
                     e2.printStackTrace();
+                    System.exit(-1);
                 }
             }
-
         }
-        return new TokenValue("Test_Value");
+        return TokenType.NOT_NUMERIC;
     }
 
 
